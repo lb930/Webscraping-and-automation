@@ -33,4 +33,7 @@ The website uses new lines and a varying number of paragraphs and lists which is
     }
 
 **Clean country_summary json file.ipynb** handles the cleaning of the data and outputs it to Travel_advice2.docx.
+Find and replace <br> with ^l adds new lines.
+
+![image](https://user-images.githubusercontent.com/59416844/83358499-e5c5e000-a36b-11ea-9d4f-53c5978cef2c.png)
 
