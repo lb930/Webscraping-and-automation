@@ -4,7 +4,7 @@ This repository contains webscraping and automation projects.
 
 ## Content
 
-1. **[AOPA](https://github.com/lb930/Webscraping-and-automation/tree/master/AOPA)**: This project uses Selenium to scrape all airports and their categories (private, military etc) from https://www.aopa.org/. Each airport name is then used to obtain further details using the AOPA API.
+1. **[AOPA](https://github.com/lb930/Webscraping-and-automation/tree/master/AOPA)**: This project uses Selenium to scrape all airports and their categories (private, military etc) from [AOPA](https://www.aopa.org/). Each airport name is then used to obtain further details using the AOPA API.
 
 2. **[Ecco Verde](https://github.com/lb930/Webscraping-and-automation/tree/master/Ecco%20Verde)**: This project uses Scrapy to obtain all products from a specific manufacturer from the Ecco Verde website. It then extracts all customer reviews.
 
@@ -14,4 +14,4 @@ This repository contains webscraping and automation projects.
 
 5. **[Tableau Public Profiles](https://github.com/lb930/Webscraping-and-automation/tree/master/Tableau%20Public%20Profiles)**: Scrapes each viz, its views and the number of favourites it has received from a given Tableau Public profile.
 
-6. **[Travel Advice](https://github.com/lb930/Webscraping-and-automation/tree/master/Travel%20Advice)**: This project scrapes the UK foreign travel advice website (https://www.gov.uk/foreign-travel-advice). I started by scraping the URLs for each country and used those to scrape the summary website. 
+6. **[Travel Advice](https://github.com/lb930/Webscraping-and-automation/tree/master/Travel%20Advice)**: This project scrapes the [UK foreign travel advice website] (https://www.gov.uk/foreign-travel-advice). I started by scraping the URLs for each country and used those to scrape the summary website. 
