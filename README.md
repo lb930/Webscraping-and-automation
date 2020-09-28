@@ -14,4 +14,4 @@ This repository contains webscraping and automation projects.
 
 5. **[Tableau Public Profiles](https://github.com/lb930/Webscraping-and-automation/tree/master/Tableau%20Public%20Profiles)**: Scrapes each viz, its views and the number of favourites it has received from a given Tableau Public profile.
 
-6. **[Travel Advice](https://github.com/lb930/Webscraping-and-automation/tree/master/Travel%20Advice)**: This project scrapes the [UK foreign travel advice website] (https://www.gov.uk/foreign-travel-advice). I started by scraping the URLs for each country and used those to scrape the summary website. 
+6. **[Travel Advice](https://github.com/lb930/Webscraping-and-automation/tree/master/Travel%20Advice)**: This project scrapes the [UK foreign travel advice website](https://www.gov.uk/foreign-travel-advice). I started by scraping the URLs for each country and used those to scrape the summary website. 
