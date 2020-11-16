@@ -12,6 +12,7 @@ class Ozark:
         overall_id = range(30)
         director_list = []
 
+        # Needs updating
         directors = self.driver.find_elements_by_xpath('//td[@style="text-align:center"]')[3:121:4]
         for director in directors:
             director_list.append(director.text)
@@ -31,6 +32,7 @@ class Ozark:
         release_date = []
         synopsis_list = []
 
+        # Needs updatings
         for season in range(1, 4):
             self.driver.get(url + str(season))
 
@@ -64,7 +66,7 @@ class Ozark:
 
         self.df_imdb = pd.DataFrame({'season': season_numbers, 
                         'episode_num': episode_numbers,
-                        'rating': rating_numbers, 
+                        'imdb_rating': rating_numbers, 
                         'title': episode_titles, 
                         'release_date': release_date,
                         'synopsis': synopsis_list})
@@ -76,7 +78,10 @@ class Ozark:
         df['release_date'] = df['release_date'].str.replace(')', '')
         df['release_date'] = df['release_date'].str.replace('.', '')
         df['release_date'] = pd.to_datetime(df['release_date'], format='%d %b %Y')
-        df.to_csv(r'C:\Users\bezlui\Documents\Python\Flask\Ozark\IMDB.csv', index = False)
+        df['synopsis'] = df['synopsis'].str.replace(',', ';')
+        df['episode_id'] = df['season'].astype(str) + '_' + df['episode_num'].astype(str)
+        df['season_id'] = df['season'].astype(str)
+        df.to_csv(r'C:\Users\bezlui\Documents\Python\Flask\Ozark\IMDB.csv', index = False, sep = '|')
 
 if __name__ == "__main__":
     ozark = Ozark()
