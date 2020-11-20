@@ -10,8 +10,10 @@ This repository contains webscraping and automation projects.
 
 3. **[FreeAgent](https://github.com/lb930/Webscraping-and-automation/tree/master/FreeAgent)**: Wrote a script which automatically filled out my timesheets for me.
 
-4. **[Signature Flights](https://github.com/lb930/Webscraping-and-automation/tree/master/Signature%20Flights)**: Scrapes all US airports and locations from [Signature](https://www.signatureflight.com/locations?region=us).
+4. **[Ozark](https://github.com/lb930/Webscraping-and-automation/tree/master/Ozark)**: This script collects information on the TV series Ozark. The output contains a list of episodes, their release dates, directors and synopses.
 
-5. **[Tableau Public Profiles](https://github.com/lb930/Webscraping-and-automation/tree/master/Tableau%20Public%20Profiles)**: Scrapes each viz, its views and the number of favourites it has received from a given Tableau Public profile.
+5. **[Signature Flights](https://github.com/lb930/Webscraping-and-automation/tree/master/Signature%20Flights)**: Scrapes all US airports and locations from [Signature](https://www.signatureflight.com/locations?region=us).
 
-6. **[Travel Advice](https://github.com/lb930/Webscraping-and-automation/tree/master/Travel%20Advice)**: This project scrapes the [UK foreign travel advice website](https://www.gov.uk/foreign-travel-advice). I started by scraping the URLs for each country and used those to scrape the summary website. 
+6. **[Tableau Public Profiles](https://github.com/lb930/Webscraping-and-automation/tree/master/Tableau%20Public%20Profiles)**: Scrapes each viz, its views and the number of favourites it has received from a given Tableau Public profile.
+
+7. **[Travel Advice](https://github.com/lb930/Webscraping-and-automation/tree/master/Travel%20Advice)**: This project scrapes the [UK foreign travel advice website](https://www.gov.uk/foreign-travel-advice). I started by scraping the URLs for each country and used those to scrape the summary website. 

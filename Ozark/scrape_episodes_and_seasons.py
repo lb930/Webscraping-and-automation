@@ -12,6 +12,7 @@ class Ozark:
         overall_id = range(30)
         director_list = []
 
+        # Needs updating
         directors = self.driver.find_elements_by_xpath('//td[@style="text-align:center"]')[3:121:4]
         for director in directors:
             director_list.append(director.text)
@@ -31,6 +32,7 @@ class Ozark:
         release_date = []
         synopsis_list = []
 
+        # Needs updatings
         for season in range(1, 4):
             self.driver.get(url + str(season))
 
@@ -64,24 +66,28 @@ class Ozark:
 
         self.df_imdb = pd.DataFrame({'season': season_numbers, 
                         'episode_num': episode_numbers,
-                        'rating': rating_numbers, 
+                        'imdb_rating': rating_numbers, 
                         'title': episode_titles, 
                         'release_date': release_date,
                         'synopsis': synopsis_list})
 
-    def clean_data(self):
+    def clean_data(self, filepath):
 
-        df = self.df_imdb.merge(self.df_wiki, how = 'inner', left_index = True, right_on = 'overall_id')
         df['release_date'] = df['release_date'].str.replace('(', '')
         df['release_date'] = df['release_date'].str.replace(')', '')
         df['release_date'] = df['release_date'].str.replace('.', '')
         df['release_date'] = pd.to_datetime(df['release_date'], format='%d %b %Y')
-        df.to_csv(r'C:\Users\bezlui\Documents\Python\Flask\Ozark\IMDB.csv', index = False)
+        df['synopsis'] = df['synopsis'].str.replace(',', ';')
+        df['episode_id'] = df['season'].astype(str) + '_' + df['episode_num'].astype(str)
+        df['season_id'] = df['season'].astype(str)
+        df['imdb_rating'] = df['imdb_rating'].astype(float)
+        df.drop(['overall_id', 'season'], inplace = True, axis = 1)
+        df.to_csv(filepath, index = False, sep = '|', quoting=csv.QUOTE_NONE)
 
 if __name__ == "__main__":
     ozark = Ozark()
     ozark.wikipedia('https://en.wikipedia.org/wiki/Ozark_(TV_series)#Episodes')
     ozark.imdb('https://imdb-api.com/episodes/tt5071412/')
-    ozark.clean_data()
+    ozark.clean_data('your_filepath')
 
 
