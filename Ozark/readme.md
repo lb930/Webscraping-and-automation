@@ -19,7 +19,7 @@ You can run it using the ```scrapy crawl``` command:
 
     $ scrapy crawl actors
 
-## Storing the data
+#### Storing the data
 
 Use the following command to save the extracted data as json:
 
