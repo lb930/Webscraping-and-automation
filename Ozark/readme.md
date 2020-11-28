@@ -10,12 +10,15 @@ scrape_episodes_and_seasons.py stores data regarding episodes, seasons and ratin
 
 ### Spiders
 
-This project contains one spider:
+This project contains two spiders:
 
-    $ scrapy list
     actors
+    wiki
+    
+'actors' scrapes the actors for each Ozark episode from https://ozark-netflix.fandom.com/.
+'wiki' scrapes episode IDs, episode titles and directors from Wikipedia.
 
-You can run it using the ```scrapy crawl``` command:
+You can run them using the ```scrapy crawl``` command:
 
     $ scrapy crawl actors
 
