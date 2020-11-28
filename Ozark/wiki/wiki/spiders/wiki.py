@@ -19,7 +19,7 @@ class OzarkWikipedia(scrapy.Spider):
             wiki_dict["title"] = title
             wiki_dict["director"] = director
 
-        # Clean data to only return directors from Wikiedia table (xpath is identical between for several columns)
+        # Clean data to only return directors from Wikipedia table (xpath is identical for several columns and sometimes includes dates, episode IDs etc)
         directors = ['Jason Bateman', 'Daniel Sackheim', 'Andrew Bernstein', 'Ellen Kuras', 'Phil Abraham', 'Alik Sakharov', 'Ben Semanoff', 'Amanda Marsalis', 'Cherien Dabis', 'TBA']
         wiki_dict['director'] = [i for i in wiki_dict['director'] if i in directors][:-2] # excludes duplicate 'TBA' directors. Needs to be fixed for season 4
         print(wiki_dict)
