@@ -37,27 +37,21 @@ def get_decibel_screenshots(chrome_options=set_chrome_options()):
         driver.get("https://portal.decibel.com/Login")
 
         # Login
-        x = wait.until(EC.presence_of_element_located(
-            (By.XPATH, '//div//input[@placeholder="Email"]')))
+        x = wait.until(EC.presence_of_element_located((By.XPATH, '//div//input[@placeholder="Email"]')))
         x.send_keys(email)
-        driver.find_element_by_xpath(
-            '//div//input[@placeholder="Password"]').send_keys(pw)
+        driver.find_element_by_xpath('//div//input[@placeholder="Password"]').send_keys(pw)
         driver.find_element_by_xpath('//button[@type="submit"]').click()
         log.info('Logged in')
 
         # Go to Analyze -> Heatmaps
-        wait.until(EC.presence_of_all_elements_located(
-            (By.XPATH, '//span[@class="Text_root__2Tc8P HeaderBar_item-label__G-T32 mod-16 mod-semibold mod-sub"]')))
-        driver.find_elements_by_xpath(
-            '//span[@class="Text_root__2Tc8P HeaderBar_item-label__G-T32 mod-16 mod-semibold mod-sub"]')[2].click()
+        wait.until(EC.presence_of_all_elements_located((By.XPATH, '//span[@class="Text_root__2Tc8P HeaderBar_item-label__G-T32 mod-16 mod-semibold mod-sub"]')))
+        driver.find_elements_by_xpath('//span[@class="Text_root__2Tc8P HeaderBar_item-label__G-T32 mod-16 mod-semibold mod-sub"]')[2].click()
         time.sleep(1)
         driver.find_element_by_xpath('//a[@href="/Heatmaps"]').click()
 
         # Select yesterday's date
-        wait.until(EC.presence_of_all_elements_located(
-            (By.XPATH, '//span[@class="menu-item-inactive fill hidden"]')))
-        driver.find_elements_by_xpath(
-            '//span[@class="menu-item-inactive fill hidden"]')[1].click()
+        wait.until(EC.presence_of_all_elements_located((By.XPATH, '//span[@class="menu-item-inactive fill hidden"]')))
+        driver.find_elements_by_xpath('//span[@class="menu-item-inactive fill hidden"]')[1].click()
         # Date range
         try:
             wait.until(EC.presence_of_all_elements_located(
@@ -66,38 +60,30 @@ def get_decibel_screenshots(chrome_options=set_chrome_options()):
                 '//span[@class="select2-chosen"]')[0].click()
         except ElementClickInterceptedException:
             time.sleep(1)
-            driver.find_elements_by_xpath(
-                '//span[@class="select2-chosen"]')[0].click()
+            driver.find_elements_by_xpath('//span[@class="select2-chosen"]')[0].click()
         # Yesterday
-        wait.until(EC.presence_of_all_elements_located(
-            (By.XPATH, '//div[@class="select2-result-label"]')))
-        driver.find_elements_by_xpath(
-            '//div[@class="select2-result-label"]')[2].click()
+        wait.until(EC.presence_of_all_elements_located((By.XPATH, '//div[@class="select2-result-label"]')))
+        driver.find_elements_by_xpath('//div[@class="select2-result-label"]')[2].click()
         # Submit button
-        submit_button = wait.until(EC.presence_of_element_located(
-            (By.XPATH, '//span[@class="label"]')))
+        submit_button = wait.until(EC.presence_of_element_located((By.XPATH, '//span[@class="label"]')))
         submit_button.click()
         time.sleep(8)
 
         # Click on accept tracking
         driver.switch_to.frame(driver.find_element_by_tag_name("iframe"))
-        tracking = wait.until(EC.presence_of_element_located(
-            (By.XPATH, '//button[@class="gl-cta gl-cta--primary gl-cta--full-width"]')))
+        tracking = wait.until(EC.presence_of_element_located((By.XPATH, '//button[@class="gl-cta gl-cta--primary gl-cta--full-width"]')))
         tracking.click()
         time.sleep(1)
         driver.switch_to_default_content()
 
         # Export button
-        driver.find_elements_by_xpath(
-            '//span[@class="menu-item-inactive fill hidden"]')[8].click()
+        driver.find_elements_by_xpath('//span[@class="menu-item-inactive fill hidden"]')[8].click()
 
         # Take screenshot
-        take_screenshot = wait.until(EC.presence_of_element_located(
-            (By.XPATH, '//button[@class="cyan takescreenshot"]//span[@class="label"]')))
+        take_screenshot = wait.until(EC.presence_of_element_located((By.XPATH, '//button[@class="cyan takescreenshot"]//span[@class="label"]')))
         take_screenshot.click()
         # Create screenshot
-        create_screenshot = wait.until(EC.presence_of_element_located(
-            (By.XPATH, '//button[@class="button cyan success"]')))
+        create_screenshot = wait.until(EC.presence_of_element_located((By.XPATH, '//button[@class="button cyan success"]')))
         create_screenshot.click()
         log.info('Generating screenshot')
         time.sleep(50)  # generating the screenshot takes a while
